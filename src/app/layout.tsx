@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa-IR" className={vazir.className}>
+    <html lang="fa-IR" dir="rtl" className={vazir.className}>
       <body>{children}</body>
     </html>
   );

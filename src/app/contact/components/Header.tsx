@@ -2,17 +2,23 @@ import Link from "next/link";
 
 const Header = (): JSX.Element => {
   return (
-    <header className="w-full h-[4.5rem] bg-Background py-5 border-b border-CurrentLine flex">
+    <header className="fixed top-0 w-full h-20 bg-Background py-5 border-b border-CurrentLine flex">
       <nav className="max-w-[85rem] w-full mx-auto px-4 flex items-center justify-between">
-        <Link className="text-xl font-semibold text-white" href="/contact/">
+        <Link
+          className="text-xl font-semibold transition-[color] duration-[0.32s] ease-[ease-in-out] hover:text-Green text-white"
+          href="/contact/"
+        >
           وب‌اپلیکیشن مدیریت مخاطبین
         </Link>
         <div className="flex gap-5">
-          <Link className="font-medium text-white" href="/contact/add">
+          <Link
+            className="font-medium transition-[color] duration-[0.32s] ease-[ease-in-out] hover:text-Green text-white"
+            href="/contact/add"
+          >
             مخاطب جدید
           </Link>
           <Link
-            className="font-medium text-gray-400 hover:text-gray-500"
+            className="font-medium transition-[color] duration-[0.32s] ease-[ease-in-out] text-white hover:text-Green"
             href="/contact/"
           >
             لیست مخاطبین

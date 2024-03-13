@@ -1,33 +1,61 @@
-const Card = (): JSX.Element => {
+import { User } from "@/app/data";
+import Image from "next/image";
+import Link from "next/link";
+
+const Card = ({ user }: { user: User }): JSX.Element => {
   return (
-    <div className="flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl">
+    <div className="flex flex-col bg-CurrentLine hover:bg-Background transition-[background-color] duration-[0.32s] ease-[ease-in-out] hover:shadow-[inset_0px_0px_0px_2px_#44475A] border-t-4 border-t-Purple rounded-xl">
       <div className="p-4 md:p-5">
-        <h3 className="text-lg font-bold text-gray-800">
-          Card title
-        </h3>
-        <p className="mt-2 text-gray-500">
-          With supporting text below as a natural lead-in to additional content.
-        </p>
-        <a
-          className="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none"
-          href="#"
-        >
-          Card link
-          <svg
-            className="flex-shrink-0 size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+        {/* <h3 className="text-lg font-bold text-white">Card title</h3> */}
+        <div className="grid grid-cols-4">
+          <div className="col-span-3">
+            <div className="grid grid-cols-2">
+              <span className="text-white items-center">نام : </span>
+              <span className="text-white">{user.name}</span>
+            </div>
+            <hr className="my-2 bg-black border-gray-500" />
+            <div className="grid grid-cols-2">
+              <span className="text-white">نام خانوادگی : </span>
+              <span className="text-white">{user.lastName}</span>
+            </div>
+            <hr className="my-2 bg-black border-gray-500" />
+            <div className="grid grid-cols-2">
+              <span className="text-white">شماره تلفن : </span>
+              <span className="text-white">{user.phoneNumber}</span>
+            </div>
+            <hr className="my-2 bg-black border-gray-500" />
+            <div className="grid grid-cols-2">
+              <span className="text-white">ایمیل : </span>
+              <span className="text-white">{user.email}</span>
+            </div>
+          </div>
+          <Image
+            src={user.profilePicture}
+            width={85}
+            alt={`Avatar of ${user.name}`}
+            className="col-span-1 self-center justify-self-center align-self rounded-2xl"
+          />
+        </div>
+        <div className="flex mt-3 gap-1 justify-center">
+          <Link
+            href="#"
+            className="py-3 px-4 bg-Green font-semibold rounded-xl"
           >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </a>
+            جزئیات
+          </Link>
+          <Link
+            href="#"
+            className="py-3 px-4 bg-Purple font-semibold rounded-xl"
+          >
+            ویرایش
+          </Link>
+          <button
+            type="button"
+            className="py-3 px-4 bg-Red font-semibold rounded-xl"
+          >
+            حذف
+          </button>
+        </div>
       </div>
     </div>
   );
