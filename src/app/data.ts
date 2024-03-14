@@ -1,4 +1,4 @@
-import { f1, f2, f3, f4, f5, m1, m2, m3, m4, m5 } from "../assets/avatars";
+import { f1, f2, f3, f4, f5, m1, m2, m3, m4, m5 } from "../assets/images/avatars";
 
 export type User = {
   id: Number;

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const vazir: NextFont = localFont({
-  src: "./Vazir.woff2",
+  src: "../assets/fonts/Vazir.woff2",
   display: "swap",
 });
 
