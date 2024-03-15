@@ -6,7 +6,6 @@ const Card = ({ user }: { user: User }): JSX.Element => {
   return (
     <div className="flex flex-col bg-CurrentLine hover:bg-Background transition-[background-color] duration-[0.32s] ease-[ease-in-out] hover:shadow-[inset_0px_0px_0px_2px_#44475A] border-t-4 border-t-Purple rounded-xl">
       <div className="p-4 md:p-5">
-        {/* <h3 className="text-lg font-bold text-white">Card title</h3> */}
         <div className="grid grid-cols-4">
           <div className="col-span-3">
             <div className="grid grid-cols-2">
@@ -29,12 +28,13 @@ const Card = ({ user }: { user: User }): JSX.Element => {
               <span className="text-white">{user.email}</span>
             </div>
           </div>
-          <Image
-            src={user.profilePicture}
-            width={85}
-            alt={`Avatar of ${user.name}`}
-            className="col-span-1 self-center justify-self-center align-self rounded-2xl"
-          />
+          <div className="col-span-1 self-center justify-self-center align-self">
+            <Image
+              src={user.profilePicture}
+              width={85}
+              alt={`Avatar of ${user.name}`}
+            />
+          </div>
         </div>
         <div className="flex mt-3 gap-1 justify-center">
           <Link
