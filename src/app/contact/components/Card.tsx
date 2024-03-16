@@ -39,22 +39,22 @@ const Card = ({ user }: { user: User }): JSX.Element => {
         </div>
         <div className="flex mt-3 gap-1 justify-center">
           <Link
-            href="#"
-            className="py-3 px-4 bg-Green font-semibold rounded-xl flex gap-1 place-items-center"
+            href="/contact/id/detail"
+            className="py-3 px-4 bg-Green font-semibold rounded-xl flex gap-1 place-items-center hover:bg-green-500"
           >
             <DetailIcon />
             جزئیات
           </Link>
           <Link
-            href="#"
-            className="py-3 px-4 bg-Purple font-semibold rounded-xl flex gap-1 place-items-center"
+            href="/contact/id/edit"
+            className="py-3 px-4 bg-Purple font-semibold rounded-xl flex gap-1 place-items-center hover:bg-purple-500"
           >
             <EditIcon />
             ویرایش
           </Link>
           <button
             type="button"
-            className="py-3 px-4 bg-Red font-semibold rounded-xl flex gap-1 place-items-center"
+            className="py-3 px-4 bg-Red font-semibold rounded-xl flex gap-1 place-items-center hover:bg-red-500"
           >
             <DeleteIcon />
             حذف
