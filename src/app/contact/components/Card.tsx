@@ -1,4 +1,5 @@
 import { User } from "@/app/data";
+import { EditIcon, DetailIcon, DeleteIcon } from "@/assets/images/icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,20 +40,23 @@ const Card = ({ user }: { user: User }): JSX.Element => {
         <div className="flex mt-3 gap-1 justify-center">
           <Link
             href="#"
-            className="py-3 px-4 bg-Green font-semibold rounded-xl"
+            className="py-3 px-4 bg-Green font-semibold rounded-xl flex gap-1 place-items-center"
           >
+            <DetailIcon />
             جزئیات
           </Link>
           <Link
             href="#"
-            className="py-3 px-4 bg-Purple font-semibold rounded-xl"
+            className="py-3 px-4 bg-Purple font-semibold rounded-xl flex gap-1 place-items-center"
           >
+            <EditIcon />
             ویرایش
           </Link>
           <button
             type="button"
-            className="py-3 px-4 bg-Red font-semibold rounded-xl"
+            className="py-3 px-4 bg-Red font-semibold rounded-xl flex gap-1 place-items-center"
           >
+            <DeleteIcon />
             حذف
           </button>
         </div>
