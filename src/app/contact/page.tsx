@@ -1,21 +1,25 @@
+"use client";
+
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Card from "./components/Card";
-import { User, users } from "../data";
 import { Fragment, Key } from "react";
+import { useGetContacts } from "../queries/contacts";
+import { Contact } from "../models/contacts";
 
-const Home = (): JSX.Element => {
+export default function Home() {
   const uxSkeletonArray: number[] = Array(9).fill(0);
+  const { data: contacts, totalRecords } = useGetContacts();
   return (
     <div>
       <Header />
       <div className="flex">
         <Sidebar />
         <div className="h-dvh w-full lg:pr-[24rem] pt-24 px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {users.length > 1
-            ? users.map((user: User, index: Key) => (
+          {totalRecords
+            ? contacts.map((contact: Contact, index: Key) => (
                 <Fragment key={index}>
-                  <Card user={user} />
+                  <Card contact={contact} />
                 </Fragment>
               ))
             : uxSkeletonArray.map((skeleton, index: Key) => (
@@ -44,5 +48,4 @@ const Home = (): JSX.Element => {
       </div>
     </div>
   );
-};
-export default Home;
+}

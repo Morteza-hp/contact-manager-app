@@ -5,7 +5,7 @@
       "name": "Morteza",
       "lastName": "Hasanpour",
       "email": "Mortezahp1381@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/m1",
+      "profilePicture": "/assets/images/avatars/m1.svg",
       "phoneNumber": "09125678491",
       "age": 21
     },
@@ -14,7 +14,7 @@
       "name": "Ali",
       "lastName": "Hakimfar",
       "email": "alihakimfar253@ymail.com",
-      "profilePicture": "../src/assets/images/avatars/m2",
+      "profilePicture": "/assets/images/avatars/m2.svg",
       "phoneNumber": "09195482489",
       "age": 30
     },
@@ -23,7 +23,7 @@
       "name": "Mohsen",
       "lastName": "Aghaei",
       "email": "mohsen48@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/m3",
+      "profilePicture": "/assets/images/avatars/m3.svg",
       "phoneNumber": "09391099098",
       "age": 34
     },
@@ -32,7 +32,7 @@
       "name": "Mahdi",
       "lastName": "Rahimi",
       "email": "hunter120@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/m4",
+      "profilePicture": "/assets/images/avatars/m4.svg",
       "phoneNumber": "09804448711",
       "age": 23
     },
@@ -41,7 +41,7 @@
       "name": "Kaveh",
       "lastName": "Ahmadi",
       "email": "kavehahmadi574@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/m5",
+      "profilePicture": "/assets/images/avatars/m5.svg",
       "phoneNumber": "09127758493",
       "age": 19
     },
@@ -50,7 +50,7 @@
       "name": "Parisa",
       "lastName": "Alborz",
       "email": "alborz302@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/f1",
+      "profilePicture": "/assets/images/avatars/f1.svg",
       "phoneNumber": "09309090877",
       "age": 29
     },
@@ -59,7 +59,7 @@
       "name": "Maryam",
       "lastName": "Karimi",
       "email": "maryam.karimi@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/f2",
+      "profilePicture": "/assets/images/avatars/f2.svg",
       "phoneNumber": "09125678491",
       "age": 22
     },
@@ -68,7 +68,7 @@
       "name": "Kiana",
       "lastName": "Yasini",
       "email": "katty9092@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/f3",
+      "profilePicture": "/assets/images/avatars/f3.svg",
       "phoneNumber": "09991434278",
       "age": 21
     },
@@ -77,7 +77,7 @@
       "name": "Leila",
       "lastName": "Mehraban",
       "email": "legend55@ymail.com",
-      "profilePicture": "../src/assets/images/avatars/f4",
+      "profilePicture": "/assets/images/avatars/f4.svg",
       "phoneNumber": "09114641676",
       "age": 38
     },
@@ -86,7 +86,7 @@
       "name": "Sepide",
       "lastName": "Sabouri",
       "email": "ultimate53@gmail.com",
-      "profilePicture": "../src/assets/images/avatars/f5",
+      "profilePicture": "/assets/images/avatars/f5.svg",
       "phoneNumber": "09921373765",
       "age": 18
     }
