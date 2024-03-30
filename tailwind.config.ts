@@ -26,6 +26,9 @@ const config: Config = {
         Red: "#FF5555",
         Yellow: "#F1FA8C",
       },
+      fontFamily: {
+        vazirmatn: ['var(--font-vazirmatn)'],
+      },
     },
   },
   plugins: [],
