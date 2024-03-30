@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import QueryProvider from "./queries/QueryProvider";
+import Header from "./contact/components/Header";
 
 export const metadata: Metadata = {
   title: {
@@ -30,7 +31,15 @@ export default function RootLayout({
       className={`${vazirmatn.variable} font-vazirmatn`}
     >
       <body>
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <div>
+            <Header />
+            <div className="flex">
+              
+              {children}
+            </div>
+          </div>
+        </QueryProvider>
       </body>
     </html>
   );

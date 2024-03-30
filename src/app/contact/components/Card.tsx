@@ -47,7 +47,9 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
             href="/contact/id/detail"
             className="py-3 px-4 bg-Green font-semibold rounded-xl flex gap-1 place-items-center hover:bg-green-500"
           >
-            <DetailIcon />
+            <div className="size-4">
+              <DetailIcon />
+            </div>
             جزئیات
           </Link>
           <Link
