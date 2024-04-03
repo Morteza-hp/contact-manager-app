@@ -24,3 +24,13 @@ export function useGetContacts() {
     totalRecords,
   };
 }
+
+export const useAddContacts = () => {
+  const { mutateAsync, data, error, isPending } = useMutation({
+    mutationFn: (contact: Contact) => Service.contact.add(contact),
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEY] });
+    },
+  });
+  return { mutateAsync, data, error, isPending };
+};

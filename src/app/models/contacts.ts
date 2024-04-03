@@ -7,3 +7,8 @@ export type Contact = {
   phoneNumber: String;
   age: Number;
 };
+
+export type CommonFormProps<T>  = {
+  formMode: "add" | "edit" | "detail",
+  onSubmit?: (data:T)=>void | null,
+}
