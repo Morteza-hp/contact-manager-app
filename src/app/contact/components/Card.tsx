@@ -1,11 +1,8 @@
 import { Contact } from "@/app/models/contacts";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  EditIcon,
-  DeleteIcon,
-  DetailIcon,
-} from "../../../../public/assets/images/icons";
+import { EditIcon, DetailIcon } from "../../../../public/assets/images/icons";
+import DeleteButton from "./DeleteButton";
 
 const Card = ({ contact }: { contact: Contact }): JSX.Element => {
   return (
@@ -38,13 +35,13 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
               src={contact.profilePicture}
               height={85}
               width={85}
-              alt={`Avatar of ${contact.name}`}
+              alt={Avatar of ${contact.name}}
             />
           </div>
         </div>
         <div className="flex mt-3 gap-1 justify-center">
           <Link
-            href={`/contact/${contact.id}/detail`}
+            href={/contact/${contact.id}/detail}
             className="py-3 px-4 bg-Green font-semibold rounded-xl flex gap-1 place-items-center hover:bg-green-500"
           >
             <div className="size-4">
@@ -53,19 +50,13 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
             جزئیات
           </Link>
           <Link
-            href={`/contact/${contact.id}/edit`}
+            href={/contact/${contact.id}/edit}
             className="py-3 px-4 bg-Purple font-semibold rounded-xl flex gap-1 place-items-center hover:bg-purple-500"
           >
             <EditIcon />
             ویرایش
           </Link>
-          <button
-            type="button"
-            className="py-3 px-4 bg-Red font-semibold rounded-xl flex gap-1 place-items-center hover:bg-red-500"
-          >
-            <DeleteIcon />
-            حذف
-          </button>
+          <DeleteButton contact={contact} />
         </div>
       </div>
     </div>

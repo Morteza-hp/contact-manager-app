@@ -13,8 +13,14 @@ import { CommonFormProps, Contact } from "../models/contacts";
 
 type ContactFormProps = CommonFormProps<Contact>;
 
-const ContactForm = ({ formMode, onSubmit }: ContactFormProps) => {
-  const { register, handleSubmit } = useForm();
+const ContactForm = ({
+  formMode,
+  onSubmit,
+  defaultValue,
+}: ContactFormProps) => {
+  const { register, handleSubmit } = useForm({
+    defaultValues: defaultValue,
+  });
   return (
     <fieldset disabled={formMode === "detail"}>
       <form
