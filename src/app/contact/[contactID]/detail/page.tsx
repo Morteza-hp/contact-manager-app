@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "جزئیات",
-};
+}
 
 const Detail = () => {
   return (
