@@ -1,14 +1,11 @@
 import { Metadata } from "next";
+import DetailPage from "./DetailPage";
 
 export const metadata: Metadata = {
   title: "جزئیات",
-}
+};
 
-const Detail = () => {
-  return (
-    <div>
-      <h1>Detail</h1>
-    </div>
-  );
+const Detail = ({ params }: { params: { contactID: string } }) => {
+  return <DetailPage id={Number(params.contactID)}/>;
 };
 export default Detail;

@@ -7,6 +7,8 @@ const Service = {
     get: () => HttpClient.get<any>(API_ENDPOINTS.CONTACTS),
     add: (params: Contact) =>
       HttpClient.post<Contact>(API_ENDPOINTS.CONTACTS, { ...params }),
+    detail: (id: number) =>
+      HttpClient.get<Contact>(${API_ENDPOINTS.CONTACTS}/${id}),
   },
 };
 export default Service;

@@ -34,3 +34,11 @@ export const useAddContacts = () => {
   });
   return { mutateAsync, data, error, isPending };
 };
+
+export const useDetailContacts = (id: number) => {
+  const { data, isPending, error } = useQuery({
+    queryKey: [QUERY_KEY, id],
+    queryFn: (options) => Service.contact.detail(options.queryKey[1] as number),
+  });
+  return { data, isPending, error };
+};
