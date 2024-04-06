@@ -9,6 +9,8 @@ const Service = {
       HttpClient.post<Contact>(API_ENDPOINTS.CONTACTS, { ...params }),
     detail: (id: number) =>
       HttpClient.get<Contact>(${API_ENDPOINTS.CONTACTS}/${id}),
+    delete: (id: number) =>
+      HttpClient.delete<any>(${API_ENDPOINTS.CONTACTS}/${id}),
   },
 };
 export default Service;

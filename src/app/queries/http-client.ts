@@ -16,4 +16,8 @@ export class HttpClient {
     const response = await Axios.post<T>(url, data, options);
     return response.data;
   }
+  static async delete<T>(url: string) {
+    const response = await Axios.delete<T>(url);
+    return response.data;
+  }
 }
