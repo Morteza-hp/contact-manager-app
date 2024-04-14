@@ -2,6 +2,12 @@
 import { Contact } from "@/app/models/contacts";
 import { useAddContacts } from "@/app/queries/contacts";
 import ContactForm from "../ContactForm";
+import { z } from "zod";
+import {
+  requiredString,
+  requiredEmail,
+  requiredNumber,
+} from "@/app/zod/options";
 import toast from "react-hot-toast";
 import { Metadata } from "next";
 
@@ -10,6 +16,15 @@ import { Metadata } from "next";
 // }
 
 const Add = () => {
+  const validationsSchema = z.object({
+    name: requiredString(4, "نام"),
+    lastName: requiredString(4, "نام خانوادگی"),
+    profilePicture: z.any(),
+    age: requiredNumber(1, 100, "سن"),
+    email: requiredEmail("ایمیل"),
+    phoneNumber: requiredString(6, "شماره تلفن"),
+  });
+
   const { mutateAsync: addContact } = useAddContacts();
   const onSubmit = async (contact: Contact) => {
     await addContact(contact)
@@ -37,6 +52,12 @@ const Add = () => {
       });
   };
 
-  return <ContactForm formMode="add" onSubmit={onSubmit} />;
+  return (
+    <ContactForm
+      formMode="add"
+      onSubmit={onSubmit}
+      validationsSchema={validationsSchema}
+    />
+  );
 };
 export default Add;
