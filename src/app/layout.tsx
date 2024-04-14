@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import QueryProvider from "./queries/QueryProvider";
 import Header from "./contact/components/Header";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: {
@@ -28,16 +29,14 @@ export default function RootLayout({
     <html
       lang="fa-IR"
       dir="rtl"
-      className={`${vazirmatn.variable} font-vazirmatn`}
+      className={${vazirmatn.variable} font-vazirmatn}
     >
       <body>
         <QueryProvider>
           <div>
+            <Toaster />
             <Header />
-            <div className="flex">
-              
-              {children}
-            </div>
+            <div className="flex">{children}</div>
           </div>
         </QueryProvider>
       </body>
