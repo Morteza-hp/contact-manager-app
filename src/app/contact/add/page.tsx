@@ -8,6 +8,8 @@ import {
   requiredEmail,
   requiredNumber,
 } from "@/app/zod/options";
+import toast from "react-hot-toast";
+import { Metadata } from "next";
 
 // export const metadata: Metadata = {
 //   title: "ایجاد",
