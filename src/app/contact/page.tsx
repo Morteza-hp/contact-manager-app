@@ -1,21 +1,25 @@
 "use client";
 
-import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Card from "./components/Card";
-import { Fragment, Key } from "react";
+import { Fragment, Key, useEffect, useState } from "react";
 import { useGetContacts } from "../queries/contacts";
 import { Contact } from "../models/contacts";
 
 export default function Home() {
   const uxSkeletonArray: number[] = Array(9).fill(0);
   const { data: contacts, totalRecords } = useGetContacts();
+  const [filteredContacts, setFilteredContacts] = useState(contacts);
+  useEffect(() => {
+    setFilteredContacts(contacts);
+  }, [contacts]);
+  console.log("filteredContacts: ", filteredContacts);
   return (
     <div>
-      <Sidebar />
+      <Sidebar contacts={contacts} setFilteredContacts={setFilteredContacts} />
       <div className="h-dvh w-full lg:pr-[24rem] pt-24 px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {totalRecords
-          ? contacts.map((contact: Contact, index: Key) => (
+        {filteredContacts
+          ? filteredContacts?.map((contact: Contact, index: Key) => (
               <Fragment key={index}>
                 <Card contact={contact} />
               </Fragment>
