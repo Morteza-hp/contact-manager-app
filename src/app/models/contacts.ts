@@ -1,15 +1,16 @@
 export type Contact = {
-  id: number;
+  id?: number;
   name: String;
   lastName: String;
   email: String;
-  profilePicture: any;
+  profilePicture?: any;
   phoneNumber: String;
   age: number;
 };
 
 export type CommonFormProps<T>  = {
   formMode: "add" | "edit" | "detail",
-  defaultValue: T,
-  onSubmit?: (data:T)=>void | null,
+  defaultValue?: T,
+  validationsSchema?: any ,
+  onSubmit: (data:T)=>Promise<void> | void,
 }
