@@ -1,14 +1,11 @@
 import { Metadata } from "next";
+import EditPage from "./EditPage";
 
 export const metadata: Metadata = {
   title: "ویرایش",
 };
 
-const Edit = () => {
-  return (
-    <div>
-      <h1>Edit</h1>
-    </div>
-  );
+const Edit = ({ params }: { params: { contactID: string } }) => {
+  return <EditPage id={Number(params.contactID)}/>;
 };
 export default Edit;

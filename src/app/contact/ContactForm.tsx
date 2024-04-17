@@ -2,6 +2,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import CustomInput from "./components/CustomInput";
 import {
   AddIcon,
+  EditIcon,
   EmailIcon,
   GalleryIcon,
   PhoneIcon,
@@ -71,15 +72,23 @@ const ContactForm = ({
               name={"age"}
             />
           </div>
-          <button
-            type="submit"
-            className="py-3 px-4 mt-4 font-semibold rounded-xl flex gap-1 place-items-center bg-Green hover:bg-green-500"
-          >
-            <div className="size-[14px]">
-              <AddIcon />
-            </div>
-            {"ایجاد مخاطب"}
-          </button>
+          {formMode !== "detail" && (
+            <button
+              type="submit"
+              className="py-3 px-4 mt-4 font-semibold rounded-xl flex gap-1 place-items-center bg-Green hover:bg-green-500"
+            >
+              <div className="size-[14px]">
+                {formMode === "add" ? (
+                  <AddIcon />
+                ) : (
+                  formMode === "edit" && <EditIcon />
+                )}
+              </div>
+              {formMode === "add"
+                ? "ایجاد مخاطب"
+                : formMode === "edit" && "ویرایش مخاطب"}
+            </button>
+          )}
         </form>
       </FormProvider>
     </fieldset>
