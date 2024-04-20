@@ -20,4 +20,8 @@ export class HttpClient {
     const response = await Axios.delete<T>(url);
     return response.data;
   }
+  static async put<T>(url: string, data: unknown, options?: any) {
+    const response = await Axios.put<T>(url, data, options);
+    return response.data;
+  }
 }

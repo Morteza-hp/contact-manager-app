@@ -52,3 +52,13 @@ export function useDeleteContacts() {
   });
   return { isSuccess, isError, isPending, mutate, error };
 }
+
+export const useUpdateContacts = () => {
+  const { mutateAsync, data, error, isPending } = useMutation({
+    mutationFn: (contact: Contact) => Service.contact.update(contact),
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEY] });
+    },
+  });
+  return { mutateAsync, data, error, isPending };
+};
