@@ -29,7 +29,7 @@ export default function RootLayout({
     <html
       lang="fa-IR"
       dir="rtl"
-      className={${vazirmatn.variable} font-vazirmatn}
+      className={`${vazirmatn.variable} font-vazirmatn`}
     >
       <body>
         <QueryProvider>

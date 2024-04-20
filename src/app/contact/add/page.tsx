@@ -6,4 +6,7 @@ export const metadata: Metadata = {
 };
 
 const Add = () => {
-  return <AddPage/>;
+  return <AddPage />;
+};
+
+export default Add;

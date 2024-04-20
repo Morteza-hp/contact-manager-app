@@ -1,16 +1,7 @@
-import { FieldErrors, useFormContext } from "react-hook-form";
+import { CustomInputProps } from "@/app/models/contacts";
+import { useFormContext } from "react-hook-form";
 
-const CustomInput = ({
-  icon,
-  text,
-  type,
-  name,
-}: {
-  icon: any;
-  text: string;
-  type: string;
-  name: string;
-}): JSX.Element => {
+const CustomInput = ({ icon, text, type, name }: CustomInputProps): JSX.Element => {
   const {
     register,
     formState: { errors },
@@ -22,6 +13,7 @@ const CustomInput = ({
     <div className="flex flex-col">
       <div className="relative">
         <input
+          autoComplete="off"
           type={type}
           {...register(name)}
           id={name}

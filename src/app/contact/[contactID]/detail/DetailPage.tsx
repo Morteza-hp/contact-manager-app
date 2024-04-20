@@ -1,17 +1,14 @@
 "use client";
 import { useDetailContacts } from "@/app/queries/contacts";
 import ContactForm from "../../ContactForm";
+import Loader from "../../components/Loader";
 
 const DetailPage = ({ id }: { id: number }) => {
   const { data: contact, isPending } = useDetailContacts(id);
-  return (
-    contact && (
-      <ContactForm
-        formMode="detail"
-        defaultValue={contact}
-        onSubmit={() => {}}
-      />
-    )
+  return isPending ? (
+    <Loader />
+  ) : (
+    <ContactForm formMode="detail" defaultValue={contact} onSubmit={() => {}} />
   );
 };
 export default DetailPage;

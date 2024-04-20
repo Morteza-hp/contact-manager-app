@@ -35,13 +35,13 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
               src={contact.profilePicture}
               height={85}
               width={85}
-              alt={Avatar of ${contact.name}}
+              alt={`Avatar of ${contact.name}`}
             />
           </div>
         </div>
         <div className="flex mt-3 gap-1 justify-center">
           <Link
-            href={/contact/${contact.id}/detail}
+            href={`/contact/${contact.id}/detail`}
             className="py-3 px-4 bg-Green font-semibold rounded-xl flex gap-1 place-items-center hover:bg-green-500"
           >
             <div className="size-4">
@@ -50,7 +50,7 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
             جزئیات
           </Link>
           <Link
-            href={/contact/${contact.id}/edit}
+            href={`/contact/${contact.id}/edit`}
             className="py-3 px-4 bg-Purple font-semibold rounded-xl flex gap-1 place-items-center hover:bg-purple-500"
           >
             <EditIcon />

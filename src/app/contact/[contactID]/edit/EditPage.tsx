@@ -10,6 +10,7 @@ import {
 } from "@/app/zod/option";
 import { z } from "zod";
 import toast from "react-hot-toast";
+import Loader from "../../components/Loader";
 
 const EditPage = ({ id }: { id: number }) => {
   const { data: contact, isPending } = useDetailContacts(id);
@@ -48,15 +49,15 @@ const EditPage = ({ id }: { id: number }) => {
         });
       });
   };
-  return (
-    contact && (
-      <ContactForm
-        formMode="edit"
-        defaultValue={contact}
-        onSubmit={onSubmit}
-        validationsSchema={validationsSchema}
-      />
-    )
+  return isPending ? (
+    <Loader />
+  ) : (
+    <ContactForm
+      formMode="edit"
+      defaultValue={contact}
+      onSubmit={onSubmit}
+      validationsSchema={validationsSchema}
+    />
   );
 };
 export default EditPage;
