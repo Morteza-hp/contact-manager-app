@@ -1,6 +1,6 @@
 "use client";
 import { useDetailContacts } from "@/app/queries/contacts";
-import ContactForm from "../../ContactForm";
+import ContactForm from "../../components/ContactForm";
 import Loader from "../../components/Loader";
 
 const DetailPage = ({ id }: { id: number }) => {

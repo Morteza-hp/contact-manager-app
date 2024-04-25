@@ -1,7 +1,7 @@
 "use client";
 import { Contact } from "@/app/models/contacts";
 import { useAddContacts } from "@/app/queries/contacts";
-import ContactForm from "../ContactForm";
+import ContactForm from "../components/ContactForm";
 import { z } from "zod";
 import {
   requiredString,
@@ -9,8 +9,10 @@ import {
   requiredNumber,
 } from "@/app/zod/option";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const AddPage = () => {
+  const router = useRouter();
   const validationsSchema = z.object({
     name: requiredString(4, "نام"),
     lastName: requiredString(4, "نام خانوادگی"),
@@ -33,6 +35,7 @@ const AddPage = () => {
             color: "#fff",
           },
         });
+        router.push("/contact/");
       })
       .catch((_errors) => {
         toast.error("در ایجاد مخاطب مشکلی پیش آمده است.", {

@@ -35,17 +35,17 @@ export const useAddContacts = () => {
   return { mutateAsync, data, error, isPending };
 };
 
-export const useDetailContacts = (id: number) => {
+export const useDetailContacts = (id: string) => {
   const { data, isPending, error } = useQuery({
     queryKey: [QUERY_KEY, id],
-    queryFn: (options) => Service.contact.detail(options.queryKey[1] as number),
+    queryFn: (options) => Service.contact.detail(options.queryKey[1]),
   });
   return { data, isPending, error };
 };
 
 export function useDeleteContacts() {
   const { mutate, isSuccess, isError, isPending, error } = useMutation({
-    mutationFn: (id: number) => Service.contact.delete(id),
+    mutationFn: (id: string) => Service.contact.delete(id),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEY] });
     },

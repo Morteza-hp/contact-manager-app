@@ -4,6 +4,7 @@ import { useDeleteContacts } from "@/app/queries/contacts";
 import { DeleteIcon } from "../../../../public/assets/images/icons";
 import { useRef, useState } from "react";
 import { Contact } from "@/app/models/contacts";
+import toast from "react-hot-toast";
 
 const DeleteButton = ({ contact }: { contact: Contact }): JSX.Element => {
   const { mutate: deleteContactById } = useDeleteContacts();
@@ -20,8 +21,26 @@ const DeleteButton = ({ contact }: { contact: Contact }): JSX.Element => {
     if (!item) return;
 
     deleteContactById(item?.id, {
-      onSuccess: () => console.log("successful"),
-      onError: (e) => console.log("failed"),
+      onSuccess: () =>
+        toast.success("مخاطب با موفقیت حذف شد.", {
+          icon: "🚀",
+          style: {
+            borderRadius: "4px",
+            border: "1px solid #50FA7B",
+            background: "#282A36",
+            color: "#fff",
+          },
+        }),
+      onError: (e) =>
+        toast.error("در حذف مخاطب مشکلی پیش آمده است.", {
+          icon: "🤔",
+          style: {
+            borderRadius: "4px",
+            border: "1px solid #FF5555",
+            background: "#282A36",
+            color: "#fff",
+          },
+        }),
     });
     closeModal();
     setItem(null);
@@ -38,7 +57,7 @@ const DeleteButton = ({ contact }: { contact: Contact }): JSX.Element => {
       </button>
       <dialog
         ref={dialogRef}
-        className="bg-Comment rounded-lg border-2 border-Green p-4"
+        className="backdrop:bg-black/50 bg-Comment rounded-xl border-2 border-CurrentLine p-4"
       >
         <p className="text-xl">آیا از حذف این مخاطب مطمئن هستید؟</p>
         <p className="text-sm mt-1 text-gray-800">

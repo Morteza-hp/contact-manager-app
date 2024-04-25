@@ -1,5 +1,4 @@
 import { Contact } from "@/app/models/contacts";
-import Image from "next/image";
 import Link from "next/link";
 import { EditIcon, DetailIcon } from "../../../../public/assets/images/icons";
 import DeleteButton from "./DeleteButton";
@@ -31,11 +30,12 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
             </div>
           </div>
           <div className="col-span-1 self-center justify-self-center align-self">
-            <Image
+            <img
               src={contact.profilePicture}
               height={85}
               width={85}
               alt={`Avatar of ${contact.name}`}
+              className="rounded-xl"
             />
           </div>
         </div>

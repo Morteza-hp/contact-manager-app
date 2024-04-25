@@ -1,5 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
-import CustomInput from "./components/CustomInput";
+import CustomInput from "./CustomInput";
 import {
   AddIcon,
   BackIcon,
@@ -9,9 +9,9 @@ import {
   PhoneIcon,
   SandClockIcon,
   UserIcon,
-} from "../../../public/assets/images/icons";
+} from "../../../../public/assets/images/icons";
 
-import { CommonFormProps, Contact } from "../models/contacts";
+import { CommonFormProps, Contact } from "../../models/contacts";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 

@@ -19,19 +19,55 @@ export default function Home() {
     <>
       <Sidebar contacts={contacts} setFilteredContacts={setFilteredContacts} />
       <div className="w-full lg:pr-[24rem] pt-24 px-4">
-        <div className="flex flex-col justify-center items-center mx-4 gap-2 lg:hidden">
+        <div className="flex flex-col justify-center items-center gap-2 lg:hidden">
           <Link
             className="py-3 px-4 bg-Green font-semibold rounded-xl flex place-items-center sm:hidden hover:bg-green-500"
             href="/contact/add"
           >
             مخاطب جدید
           </Link>
-          <FilterInput
-            id="nameFilter"
-            placeholder="جستجوی نام"
-            contacts={contacts}
-            setFilteredContacts={setFilteredContacts}
-          />
+          <div className="py-3 w-full">
+            <details className="group">
+              <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
+                <p className="text-xl text-white">فیلترها</p>
+                <span className="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shapeRendering="geometricPrecision"
+                    stroke="white"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div className="grid grid-cols-1 md:grid-cols-3 border border-CurrentLine p-5 rounded-xl mt-3 gap-3">
+                <FilterInput
+                  id="nameFilter"
+                  placeholder="جستجوی نام"
+                  contacts={contacts}
+                  setFilteredContacts={setFilteredContacts}
+                />
+                <FilterInput
+                  id="lastNameFilter"
+                  placeholder="جستجوی نام خانوادگی"
+                  contacts={contacts}
+                  setFilteredContacts={setFilteredContacts}
+                />
+                <FilterInput
+                  id="phoneNumberFilter"
+                  placeholder="جستجوی شماره تلفن"
+                  contacts={contacts}
+                  setFilteredContacts={setFilteredContacts}
+                />
+              </div>
+            </details>
+          </div>
         </div>
         <div className="grid grid-cols-1 pt-4 lg:pt-0 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {filteredContacts

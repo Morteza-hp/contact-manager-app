@@ -6,6 +6,6 @@ export const metadata: Metadata = {
 };
 
 const Edit = ({ params }: { params: { contactID: string } }) => {
-  return <EditPage id={Number(params.contactID)}/>;
+  return <EditPage id={params.contactID}/>;
 };
 export default Edit;
