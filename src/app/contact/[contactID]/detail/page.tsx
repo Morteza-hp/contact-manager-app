@@ -6,6 +6,6 @@ export const metadata: Metadata = {
 };
 
 const Detail = ({ params }: { params: { contactID: string } }) => {
-  return <DetailPage id={Number(params.contactID)}/>;
+  return <DetailPage id={params.contactID} />;
 };
 export default Detail;

@@ -31,10 +31,10 @@ const Card = ({ contact }: { contact: Contact }): JSX.Element => {
           </div>
           <div className="col-span-1 self-center justify-self-center align-self">
             <img
-              src={contact.profilePicture}
+              src={contact?.profilePicture}
               height={85}
               width={85}
-              alt={`Avatar of ${contact.name}`}
+              alt={`آواتار ${contact.name}`}
               className="rounded-xl"
             />
           </div>

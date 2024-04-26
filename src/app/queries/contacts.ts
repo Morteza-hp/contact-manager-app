@@ -38,7 +38,7 @@ export const useAddContacts = () => {
 export const useDetailContacts = (id: string) => {
   const { data, isPending, error } = useQuery({
     queryKey: [QUERY_KEY, id],
-    queryFn: (options) => Service.contact.detail(options.queryKey[1]),
+    queryFn: (contact) => Service.contact.detail(id),
   });
   return { data, isPending, error };
 };

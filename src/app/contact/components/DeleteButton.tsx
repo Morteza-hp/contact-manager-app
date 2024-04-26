@@ -18,7 +18,7 @@ const DeleteButton = ({ contact }: { contact: Contact }): JSX.Element => {
     dialogRef.current && dialogRef.current.close();
   };
   const deleteItem = () => {
-    if (!item) return;
+    if (!item?.id) return;
 
     deleteContactById(item?.id, {
       onSuccess: () =>
