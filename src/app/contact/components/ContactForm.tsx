@@ -1,17 +1,19 @@
 import { FormProvider, useForm } from "react-hook-form";
-import CustomInput from "./components/CustomInput";
+import CustomInput from "./CustomInput";
 import {
   AddIcon,
+  BackIcon,
   EditIcon,
   EmailIcon,
   GalleryIcon,
   PhoneIcon,
   SandClockIcon,
   UserIcon,
-} from "../../../public/assets/images/icons";
+} from "../../../../public/assets/images/icons";
 
-import { CommonFormProps, Contact } from "../models/contacts";
+import { CommonFormProps, Contact } from "../../models/contacts";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 
 type ContactFormProps = CommonFormProps<Contact>;
 
@@ -34,7 +36,7 @@ const ContactForm = ({
           className="flex flex-col items-center pt-32 px-4 w-dvw"
           noValidate
         >
-          <div className="w-full lg:w-1/2 p-8 grid grid-cols-2 gap-4 border rounded-lg border-CurrentLine">
+          <div className="w-full lg:w-1/2 p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 border rounded-lg border-CurrentLine">
             <CustomInput
               icon={<UserIcon />}
               type={"text"}
@@ -72,23 +74,34 @@ const ContactForm = ({
               name={"age"}
             />
           </div>
-          {formMode !== "detail" && (
-            <button
-              type="submit"
-              className="py-3 px-4 mt-4 font-semibold rounded-xl flex gap-1 place-items-center bg-Green hover:bg-green-500"
+          <div className="flex mt-4 gap-2">
+            {formMode !== "detail" && (
+              <button
+                type="submit"
+                className="py-3 px-4 font-semibold rounded-xl flex gap-1 place-items-center bg-Green hover:bg-green-500"
+              >
+                <div className="size-[14px]">
+                  {formMode === "add" ? (
+                    <AddIcon />
+                  ) : (
+                    formMode === "edit" && <EditIcon />
+                  )}
+                </div>
+                {formMode === "add"
+                  ? "ایجاد مخاطب"
+                  : formMode === "edit" && "ویرایش مخاطب"}
+              </button>
+            )}
+            <Link
+              href={`/contact`}
+              className="py-3 px-4 bg-Purple font-semibold rounded-xl flex gap-1 place-items-center hover:bg-purple-500"
             >
-              <div className="size-[14px]">
-                {formMode === "add" ? (
-                  <AddIcon />
-                ) : (
-                  formMode === "edit" && <EditIcon />
-                )}
+              <div className="size-4">
+                <BackIcon />
               </div>
-              {formMode === "add"
-                ? "ایجاد مخاطب"
-                : formMode === "edit" && "ویرایش مخاطب"}
-            </button>
-          )}
+              بازگشت
+            </Link>
+          </div>
         </form>
       </FormProvider>
     </fieldset>

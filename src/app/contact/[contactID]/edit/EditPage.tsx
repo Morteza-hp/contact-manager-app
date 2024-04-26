@@ -1,7 +1,7 @@
 "use client";
 
 import { useDetailContacts, useUpdateContacts } from "@/app/queries/contacts";
-import ContactForm from "../../ContactForm";
+import ContactForm from "../../components/ContactForm";
 import { Contact } from "@/app/models/contacts";
 import {
   requiredEmail,
@@ -10,9 +10,12 @@ import {
 } from "@/app/zod/option";
 import { z } from "zod";
 import toast from "react-hot-toast";
+import Loader from "../../components/Loader";
+import { useRouter } from "next/navigation";
 
-const EditPage = ({ id }: { id: number }) => {
+const EditPage = ({ id }: { id: string }) => {
   const { data: contact, isPending } = useDetailContacts(id);
+  const router = useRouter();
   const { mutateAsync: mutateUpdateContact, isPending: pendingUpdateContact } =
     useUpdateContacts();
   const validationsSchema = z.object({
@@ -24,7 +27,7 @@ const EditPage = ({ id }: { id: number }) => {
     phoneNumber: requiredString(6, "شماره تلفن"),
   });
   const onSubmit = async (contact: Contact) => {
-    await mutateUpdateContact({ ...contact, id: Number(id) })
+    await mutateUpdateContact({ ...contact, id })
       .then((order) => {
         toast.success("مخاطب با موفقیت ویرایش شد.", {
           icon: "🚀",
@@ -35,6 +38,7 @@ const EditPage = ({ id }: { id: number }) => {
             color: "#fff",
           },
         });
+        router.push("/contact/");
       })
       .catch((_errors) => {
         toast.error("در ویرایش مخاطب مشکلی پیش آمده است.", {
@@ -48,15 +52,15 @@ const EditPage = ({ id }: { id: number }) => {
         });
       });
   };
-  return (
-    contact && (
-      <ContactForm
-        formMode="edit"
-        defaultValue={contact}
-        onSubmit={onSubmit}
-        validationsSchema={validationsSchema}
-      />
-    )
+  return isPending ? (
+    <Loader />
+  ) : (
+    <ContactForm
+      formMode="edit"
+      defaultValue={contact}
+      onSubmit={onSubmit}
+      validationsSchema={validationsSchema}
+    />
   );
 };
 export default EditPage;

@@ -1,5 +1,5 @@
 export type Contact = {
-  id?: number;
+  id?: string;
   name: String;
   lastName: String;
   email: String;
@@ -8,9 +8,28 @@ export type Contact = {
   age: number;
 };
 
-export type CommonFormProps<T>  = {
-  formMode: "add" | "edit" | "detail",
-  defaultValue?: T,
-  validationsSchema?: any ,
-  onSubmit: (data:T)=>Promise<void> | void,
-}
+export type CommonFormProps<T> = {
+  formMode: "add" | "edit" | "detail";
+  defaultValue?: T;
+  validationsSchema?: any;
+  onSubmit: (data: T) => Promise<void> | void;
+};
+
+export type CustomInputProps = {
+  icon: any;
+  text: string;
+  type: string;
+  name: string;
+};
+
+export type FilterInputProps = {
+  contacts: Contact[];
+  setFilteredContacts: any;
+  id: string;
+  placeholder: string;
+};
+
+export type SidebarProps = {
+  contacts: Contact[];
+  setFilteredContacts: any;
+};
