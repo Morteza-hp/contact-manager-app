@@ -5,18 +5,18 @@
       "name": "Morteza",
       "lastName": "Hasanpour",
       "email": "Mortezahp1381@gmail.com",
-      "profilePicture": "/assets/images/avatars/m1.svg",
+      "profilePicture": "/assets/images/avatars/morteza.jpg",
       "phoneNumber": "09125678491",
       "age": 21
     },
     {
       "id": "2",
-      "name": "Ali",
-      "lastName": "Hakimfar",
-      "email": "alihakimfar253@ymail.com",
+      "name": "Amirhosein",
+      "lastName": "Ferdosfar",
+      "email": "Ferdosfar253@ymail.com",
       "profilePicture": "/assets/images/avatars/m2.svg",
       "phoneNumber": "09195482489",
-      "age": 30
+      "age": 21
     },
     {
       "id": "3",
@@ -89,15 +89,6 @@
       "profilePicture": "/assets/images/avatars/f5.svg",
       "phoneNumber": "09921373765",
       "age": 18
-    },
-    {
-      "name": "کیانو 12355",
-      "lastName": "ریوز",
-      "profilePicture": "https://pyxis.nymag.com/v1/imgs/654/1f1/08de774c11d89cb3f4ecf600a33e9c8283-24-keanu-reeves.rsquare.w400.jpg",
-      "age": 65,
-      "email": "keanu@gmail.com",
-      "phoneNumber": "0990987",
-      "id": "67f3"
     }
   ]
 }
