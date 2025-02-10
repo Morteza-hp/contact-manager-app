@@ -4,9 +4,11 @@ import { EditIcon, DetailIcon } from "../../../../public/assets/images/icons";
 import DeleteButton from "./DeleteButton";
 import Image from "next/image";
 
+import type { JSX } from "react";
+
 const Card = ({ contact }: { contact: Contact }): JSX.Element => {
   return (
-    <div className="flex flex-col bg-CurrentLine hover:bg-Background transition-[background-color] duration-[0.32s] ease-[ease-in-out] hover:shadow-[inset_0px_0px_0px_2px_#44475A] border-t-4 border-t-Purple rounded-xl">
+    <div className="flex flex-col self-center bg-CurrentLine hover:bg-Background transition-[background-color] duration-[0.32s] ease-[ease-in-out] hover:shadow-[inset_0px_0px_0px_2px_#44475A] border-t-4 border-t-Purple rounded-xl">
       <div className="p-4 md:p-5">
         <div className="grid grid-cols-4">
           <div className="col-span-3">

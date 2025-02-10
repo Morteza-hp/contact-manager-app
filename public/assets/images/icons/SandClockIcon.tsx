@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const SandClockIcon = (): JSX.Element => {
   return (
     <svg

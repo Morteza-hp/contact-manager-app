@@ -1,6 +1,8 @@
 import { SidebarProps } from "@/app/models/contacts";
 import FilterInput from "./FilterInput";
 
+import type { JSX } from "react";
+
 const Sidebar = ({
   contacts,
   setFilteredContacts,

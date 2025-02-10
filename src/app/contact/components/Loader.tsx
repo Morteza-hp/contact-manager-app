@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const Loader = (): JSX.Element => {
   return (
     <div className="w-dvw h-dvh flex justify-center items-center">

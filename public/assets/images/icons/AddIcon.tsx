@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const AddIcon = (): JSX.Element => {
   return (
     <svg

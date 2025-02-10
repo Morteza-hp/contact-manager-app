@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const KeyIcon = (): JSX.Element => {
   return (
     <svg

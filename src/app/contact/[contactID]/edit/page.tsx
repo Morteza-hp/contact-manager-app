@@ -5,7 +5,8 @@ export const metadata: Metadata = {
   title: "ویرایش",
 };
 
-const Edit = ({ params }: { params: { contactID: string } }) => {
+const Edit = async (props: { params: Promise<{ contactID: string }> }) => {
+  const params = await props.params;
   return <EditPage id={params.contactID}/>;
 };
 export default Edit;
