@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const ArrowIcon = (): JSX.Element => {
   return (
     <svg

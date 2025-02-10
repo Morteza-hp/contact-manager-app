@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const GalleryIcon = (): JSX.Element => {
   return (
     <svg

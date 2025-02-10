@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const SearchIcon = (): JSX.Element => {
     return (
       <svg
@@ -16,5 +17,5 @@ const SearchIcon = (): JSX.Element => {
       </svg>
     );
   };
-  
-  export default SearchIcon;
+
+export default SearchIcon;

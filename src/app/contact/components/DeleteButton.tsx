@@ -2,7 +2,7 @@
 
 import { useDeleteContacts } from "@/app/queries/contacts";
 import { DeleteIcon } from "../../../../public/assets/images/icons";
-import { useRef, useState } from "react";
+import { useRef, useState, type JSX } from "react";
 import { Contact } from "@/app/models/contacts";
 import toast from "react-hot-toast";
 

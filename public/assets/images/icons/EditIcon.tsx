@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const EditIcon = ():JSX.Element => {
   return (
     <svg

@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const DetailIcon = (): JSX.Element => {
   return (
     <svg

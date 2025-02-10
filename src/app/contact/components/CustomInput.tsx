@@ -1,6 +1,8 @@
 import { CustomInputProps } from "@/app/models/contacts";
 import { useFormContext } from "react-hook-form";
 
+import type { JSX } from "react";
+
 const CustomInput = ({ icon, text, type, name }: CustomInputProps): JSX.Element => {
   const {
     register,

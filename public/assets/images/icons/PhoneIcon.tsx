@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 const PhoneIcon = (): JSX.Element => {
   return (
     <svg
