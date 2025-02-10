@@ -14,7 +14,7 @@ const FilterInput = ({
       <input
         type="text"
         id={id}
-        className="p-4 block w-full ps-11 rounded-lg text-sm transition ease-in-out duration-200 hover:border-Purple focus:ring-Purple focus:border-Purple bg-CurrentLine text-white"
+        className="p-4 block w-full ps-11 rounded-lg text-sm transition ease-in-out duration-200 border border-CurrentLine focus:outline hover:border-Purple focus:outline-Purple focus:border-Purple bg-CurrentLine text-white"
         placeholder={placeholder}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           filterHandler(contacts, setFilteredContacts, e.target.value, id)

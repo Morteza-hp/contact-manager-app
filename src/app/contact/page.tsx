@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Sidebar contacts={contacts} setFilteredContacts={setFilteredContacts} />
-      <div className="w-full lg:pr-[24rem] pt-24 px-4">
+      <div className="w-full lg:pr-[24rem] p-4 pt-24">
         <div className="flex flex-col justify-center items-center gap-2 lg:hidden">
           <Link
             className="py-3 px-4 bg-Green font-semibold rounded-xl flex place-items-center sm:hidden hover:bg-green-500"
